@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123780186-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123780186-1');
+</script>
+<title>Rotated patterns</title>
+<link rel='stylesheet' href='css/styles.css'>
+<link rel='stylesheet' href='css/modal_window.css'>
+<script src="js/obvod.js"></script>
+<script src="js/mod_rio.js"></script>
+<script src="js/mod_random.js"></script>
+<script src='js/mod_bortex.js'></script>
+<script src='js/mod_spiral.js'></script>
+<script src='js/mod_triple.js'></script>
+<script src='js/mod_penta.js'></script>
+<script src='js/mod_rotate2.js'></script>
+<script src='js/mod_nova_rotate3.js'></script>
+<script src='js/mod_modal_window.js'></script>
+<script src='js/mod_axes.js'></script>
+<script src='js/mod_magik_rotate.js'></script>
+<script src='js/mod_warp_drive.js'></script>
+<script src="js/mod_half.js"></script>
+<script src="js/mod_interface.js"></script>
+<script src="js/mod_up.js"></script>
+<script src="js/mod_up2.js"></script>
+<script src='js/mod_sector.js'></script>
+<script src='js/mod_sevenctor.js'></script>
+<script src="js/mod_cli_up.js"></script>
+<script src="js/mod_plus.js"></script>
+<script src="js/mod_main_thread.js"></script>
+<script src="js/mod_obvod.js"></script>
+<script src="js/mod_nova_obvod.js"></script>
+<script src="js/mod_make_gif_on_server.js"></script>
+<script src="js/mod_draw_cluster.js"></script><script src="js/mod_define_cluster.js"></script>
+<script src="js/mod_minus.js"></script>
+<script src="js/mod_median.js"></script>
+<script type="text/javascript" src="js/mod_rotate_nova.js"></script>
+<script src="js/mod_server_queries.js"></script>
+<script src="js/mod_mright.js"></script>
+<script src="js/mod_mdown.js"></script>
+<script src="js/mod_remove_water.js"></script>
+<script src="js/mod_nineth.js"></script>
+<script src='js/credentials.js'></script>
+<script src='js/mod_control_of_level.js'></script>
+<script src="js/mod_select.js"></script>
+<script src="js/mod_shift2_both.js"></script>
+<script src="js/mod_shift_both.js"></script>
+<script type="text/javascript" src="js/mod_shift.js"></script>
+<script type="text/javascript" src="js/mod_shift_reverse.js"></script>
+<script src="js/mod_filter.js"></script>
+<script src="js/mod_makered.js"></script>
+<script src="js/mod_colors_count.js"></script>
+<script src="js/brainlock.js"></script>
+<script src="js/mod_swap_colors.js"></script>
+<script src="js/mod_actions.js"></script>
+<script src="js/mod_increase_perimeter_point_by_point.js"></script>
+<script src="js/mod_rotate_one_degree.js"></script>
+<script src="js/mod_nova_rotate2.js"></script>
+<script src="js/mod_save_image_on_server.js"></script>
+<script src='js/mod_security.js'></script>
+<script src="js/mod_image_pasting.js"></script>
+
+
+
+
+<script src="https://cdn.polyfill.io/v1/polyfill.js?features=Element.prototype.closest"></script>
+  <script src="js/DragManager.js"></script>
+  <link rel="stylesheet" href="css/dragDemo.css">
+  <script>
+  
+	function countFn(index)
+	{
+	var counter=0;
+	 var list = document.getElementById('controls').querySelectorAll('div.draggable');
+		for(var i=0;i<list.length;i++)
+		 {
+	if(list[i].childNodes[0].getAttribute('fn') == list[index].childNodes[0].getAttribute('fn'))  {counter++;}
+		
+		 }
+		 return counter;
+	}
+  
+  
+    DragManager.onDragCancel = function(dragObject) {
+      dragObject.avatar.rollback();
+    };
+
+    DragManager.onDragEnd = function(dragObject, dropElem, elementWhereAbove) {
+	
+	if( dragObject.elem.classList.contains('browser-items'))
+	{
+      dragObject.elem.style.display = 'none';
+      dropElem.classList.add('computer-smile');
+      setTimeout(function() {
+        dropElem.classList.remove('computer-smile');
+      }, 200);
+	  }
+	  else
+	  {
+		if(dropElem.id=='dark_side')
+		{ dragObject.avatar.rollback();
+			if(countFn(dragObject.indexForDragged)>1)
+			{
+				var list = document.getElementById('controls').querySelectorAll('div.draggable');
+				list[dragObject.indexForDragged].parentNode.removeChild(list[dragObject.indexForDragged]);
+			}
+			return;
+		}
+		 //if (dragObject.indexForDragged!=undefined)
+		 //dragObject.elem.childNodes[0].classList.contains('image_button_unselected')==false) 
+		// {
+		 
+	//	 var list = document.getElementById('controls').querySelectorAll('div.draggable');
+		//	list[dragObject.indexForDragged].childNodes[0].classList.toggle('image_button_mode0');
+	//	 document.getElementById('controls').insertBefore(dubl_r(dragObject.elem.childNodes[0]),list[dragObject.indexForDragged]);
+		 
+		 
+		 
+		 
+		// dubl_r(dragObject.elem.childNodes[0]);
+	//	 }
+		
+		var el2 = elementWhereAbove;
+		dragObject.elem.style.display = 'none';
+		dragObject.elem.style = '';
+	  //findDroppable(event)
+	  //take index in controls
+		// var list = document.getElementById('controls').querySelectorAll('div');
+		// for(var i=0;i<list.length;i++)
+		// {
+			  //if(list[i].childNodes[0].fn == el0.fn)  {ind0=i;}
+		//	   if(list[i].childNodes[0].fn == el2.fn)  {ind2=i;}
+			  //take index where above
+			  //rem from index and insert before index where above
+		//  }
+		  document.getElementById('controls').insertBefore(dragObject.elem,el2);
+		 
+	  }
+    };
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+div, canvas{margin:5px;}
+.selected
+{
+border: 1px solid blue;
+}
+</style>
+</head>
+<body>
+
+
+
+		<div id="levelbase" style="width:200px;height:20px;background-color:#ffff00">
+		  
+		  <div id="levelbar" style="height:19px; width:2px;background-color:red"> <span id='levelValue'></span></div>
+		 
+		  
+		</div>
+<div class='droppable' id='controls'>
+<div><img src='app/images/btn777.png' type='switcher' title='main thread 00' key='0,0,2' fn='_main_thread' class='image_button_unselected' id='image_button777' height='40' ></div>
+<div class='draggable'><img src='app/images/btn3.png' type='switcher' key='0,0,0,0,2' title='new 0000' fn='' class='image_button_unselected' id='image_button3' height='40' ></div>
+<div class='draggable'><img src='app/images/btn4.png'  type='switcher' key='0,1,2' title='random 01' fn='rnd_imgData' class='image_button_unselected' id='image_button4' height='40' ></div>
+<div class='draggable'><img src='app/images/btn28.png' title='inv'  fn='inv_imgData' angle='45' class='image_button_unselected' id='image_button28' height='40' ></div>
+<div class='draggable'><img src='app/images/btn5.png' type='switcher'  key='0,0,0,2' title='swap 000' fn='swap_colors_thread' class='image_button_unselected' id='image_button5' height='40' ></div>
+<div class='draggable'><img src='app/images/btn8.png' title='rem' fn='destroyer_thread' class='image_button_unselected' id='image_button8' height='40' ></div>
+<div class='draggable'><img src='app/images/btn2.png'  type='switcher' key='0,1,0,2' title='shift 010' fn='shift_both' class='image_button_unselected' id='image_button2' height='40' ></div>
+<div class='draggable'><img src='app/images/btn26.png'  type='switcher' key='1,0,2' title='inv shift 10' fn='inv_shift_both' class='image_button_unselected' id='image_button26' height='40' ></div>
+<div class='draggable'><img src='app/images/btn6.png'  type='switcher' key='0,1,1,2' title='up 011' fn='up_thread' class='image_button_unselected' id='image_button6' height='40' ></div>
+<div class='draggable'><img src='app/images/btn7.png' title='inv up' fn='' class='image_button_unselected' id='image_button7' height='40' ></div>
+<div class='draggable'><img src='app/images/btn1.png' title='rotate' fn='insane_rotate' class='image_button_unselected' id='image_button1' height='40' ></div>
+<div class='draggable'><img src='app/images/btn9.png' title='add' fn='' class='image_button_unselected' id='image_button9' height='40' ></div>
+<div class='draggable'><img src='app/images/btn10.png' title='filter7' fn='filter7_imgData' class='image_button_unselected' id='image_button10' height='40' ></div>
+<div class='draggable'><img src='app/images/btn11.png' title='filter0 (with filter7)'  fn='' class='image_button_unselected' id='image_button11' height='40' ></div>
+<div class='draggable'><img src='app/images/btn12.png' key='1,1,0,2' title='nanitos 110'  fn='nanitos_imgData' class='image_button_unselected' id='image_button12' height='40' ></div>
+<div class='draggable'><img src='app/images/btn13.png' title='vortex'  fn='vortex_imgData' class='image_button_unselected' id='image_button13' height='40' ></div>
+<div class='draggable'><img src='app/images/btn14.png' title='effect1'  fn='' class='image_button_unselected' id='image_button14' height='40' ></div>
+<div class='draggable'><img src='app/images/btn15.png' title='magik rotate'  fn='magik_rotate' step_angle='15' class='image_button_unselected' id='image_button15' height='40' ></div>
+<div class='draggable'><img src='app/images/btn16.png' key='1,0,1,2' title='rotate (+) 101'  fn='rotate_result_imgData' class='image_button_unselected' id='image_button16' height='40' ></div>
+<div class='draggable'><img src='app/images/btn17.png' title='minus' fn='minusos_imgData'  class='image_button_unselected' id='image_button17' height='40' ></div>
+<div class='draggable'><img src='app/images/btn18.png' title='pereplet2' fn=''  class='image_button_unselected' id='image_button18' height='40' ></div>
+<div class='draggable'><img src='app/images/btn19.png' title='rem points'  fn='' class='image_button_unselected' id='image_button19' height='40' ></div>
+<div class='draggable'><img src='app/images/btn20.png' key='1,1,2' title='plus 11'  fn='plusos_imgData' class='image_button_unselected' id='image_button20' height='40' ></div>
+<div class='draggable'><img src='app/images/btn21.png' title='nonitos'  fn='nonitos_imgData' class='image_button_unselected' id='image_button21' height='40' ></div>
+<div class='draggable'><img src='app/images/btn23.png' title='median'  fn='median_imgData' class='image_button_unselected' id='image_button23' height='40' ></div>
+<div class='draggable'><img src='app/images/btn27.png' title='median'  fn='rmedian_imgData' class='image_button_unselected' id='image_button27' height='40' ></div>
+<div class='draggable'><img src='app/images/btn24.png' title='half'  fn='half_imgData' class='image_button_unselected' id='image_button24' height='40' ></div>
+<div class='draggable'><img src='app/images/btn25.png' title='runa'  fn='runa_imgData' angle='45' class='image_button_unselected' id='image_button25' height='40' ></div>
+<div class='draggable'><img src='app/images/btn29.png' title='filter'  fn='filter_imgData' angle='45' class='image_button_unselected' id='image_button29' height='40' ></div>
+<!---
+<div class='draggable'><img src='app/images/btn30.png' title='trix'  fn='trix_imgData' angle='60' class='image_button_unselected' id='image_button30' height='40' ></div>
+--->
+<div class='draggable'><img src='app/images/btn31.png' title='cut angle'  fn='cut_angle_imgData' angle='120' class='image_button_unselected' id='image_button31' height='40' ></div>
+<div class='draggable'><img src='app/images/btn32.png' title='trilist'  fn='trilist_imgData' angle='120' class='image_button_unselected' id='image_button32' height='40' ></div>
+<div class='draggable'><img src='app/images/btn33.png' title='fivelist'  fn='fivelist_imgData' angle='72' class='image_button_unselected' id='image_button33' height='40' ></div>
+<div class='draggable'><img src='app/images/btn37.png' title='penta'  fn='penta_imgData' angle='72' class='image_button_unselected' id='image_button37' height='40' ></div>
+<div class='draggable'><img src='app/images/btn39.png' title='mod_penta'  fn='mod_penta_pentalist_imgData' angle='72' class='image_button_unselected' id='image_button39' height='40' ></div>
+<div class='draggable'><img src='app/images/btn34.png' title='sixlist'  fn='sixlist_imgData' angle='60' class='image_button_unselected' id='image_button34' height='40' ></div>
+<div class='draggable'><img src='app/images/btn35.png' key='1,0,0,2' title='circle_median 100'  fn='circle_median' angle='60' class='image_button_unselected' id='image_button35' height='40' ></div>
+<div class='draggable'><img src='app/images/btn36.png' title='sector'  fn='sector_imgData' angle='60' class='image_button_unselected' id='image_button36' height='40' ></div>
+<div class='draggable'><img src='app/images/btn40.png' title='sector'  fn='mod_sector_sector_imgData' class='image_button_unselected' id='image_button40' height='40' ></div>
+<div class='draggable'><img src='app/images/btn41.png' title='show kat'  fn='show_kat_imgData' class='image_button_unselected' id='image_button41' height='40' ></div>
+<div class='draggable'><img src='app/images/btn42.png' key='1,1,1,2' title='sevenctor 111'  fn='mod_sevenctor_sevenctor_imgData' class='image_button_unselected' id='image_button42' height='40' ></div>
+<div class='draggable'><img src='app/images/btn43.png' title='nvenctor'  fn='nvenctor_imgData'  nnnnn='11' class='image_button_unselected' id='image_button43' height='40' ></div>
+
+<div class='draggable'><img src='app/images/btn38.png' title='spiral'  fn='spiral_imgData' angle='60' class='image_button_unselected' id='image_button38' height='40' ></div>
+<div class='draggable'><img src='app/images/btn22.png' title='make gif'  fn='make_gif_imgData' class='image_button_unselected' id='image_button22' height='40' ></div>
+<div class='draggable'><img src='app/images/btn44.png' title='show fast fast video'  fn='show_fast_video_imgData'  class='image_button_unselected' id='image_button44' height='40' ></div>
+<div class='draggable'><img src='app/images/btn45.png' title='ippbp'  fn='ippbp_imgData'  class='image_button_unselected' id='image_button45' height='40' ></div>
+<div class='draggable'><img src='app/images/btn46.png' title='up2' fn='up2_thread' class='image_button_unselected' id='image_button46' height='40' ></div>
+<div class='draggable'><img src='app/images/btn47.png' title='shift2' fn='shift2_both' class='image_button_unselected' id='image_button47' height='40' ></div>
+</div>
+
+<div id='dark_side' class='droppable'>
+
+<div style='margin:20px'><canvas id="myCanvas77"  width='50' height='50' >Your browser does not support the HTML5 canvas tag.</canvas></div>
+<div id="gipro_cubes"></div>
+
+</div>
+
+
+		
+<div id='save_on_server_div' style='border:2px solid red;padding: 4px;'>
+<div>Make save on server? <input type="text" id='steps_for_save_insane_change' value='0' readonly></div> 
+<div>FROM canvas <input type="text" id='from_canvas_for_gif' value='myCanvas4'></div>
+<div>Number of frames in gif: <input type="text" title='number of frames in gif' id='number_of_frames_in_gif' value='90' ></div>
+<div>Frequence: <input type="text" title='0-99' id='frequence_of_gif' value='39' ></div>
+<div>Author: <input type="text" title='0-99 characters' id='author_of_gif' value='Created by @OlegDorozhko' ></div>
+
+<div>Delay between writing frames to memory: <input type="number" title='2000' id='delay_between_writing_frames_to_memory' readonly value='2000' >
+ </div>
+<div>Delay between sending frames to server: <input type="number" title='2000' id='delay_between_sending_frames_to_server' value='2000' >
+ </div>
+<input type="button" id="change_save_mode_for_insane_rotate_off" value="clear">
+
+<!---
+<input type="button" id="makegif" value="make gif">
+--->
+</div>
+
+<div id='filter_div'>
+<span>Filter settings: <input type="text" title='r,g,b,a' id="filter_imgData_settings" value="50,50,50,1"></span>
+</div>
+
+
+<div hidden='hidden' style='width:90px;height:34px;border:2px solid blue;text-align:center;'><textarea  style='margin: 3px 12px;width:74px;height:26px;font-weight:bold;font-size:1.5em;resize:none;overflow:hidden'>PASTE</textarea></div>
+<div>
+<input type="text" id='global_number_of_colors' value='20'><input type="button" id="glonummm" value="glonum++" onclick='global_number_of_colors++;upd();'>
+<input type="button" id="glonummm" value="glonum--" onclick='global_number_of_colors--;upd();'>
+<input type="button" id="set_global_number_of_colors" value="set global number of colors">
+</div>
+<div id='insane_rotate_div' style='border:2px solid green;'>
+<div>Delay for insane rotate <input type="text" id='insane_delay' value='100'>
+<input type="button" value=" min " onclick='document.getElementById("insane_delay").value=1'>
+<input type="button" value=" + " onclick='increment_insane_delay(10)'><input type="button" value=" ++ " onclick='increment_insane_delay(100)'>
+<input type="button" value=" +++ " onclick='increment_insane_delay(1000)'>
+<input type="button" value=" - " onclick='decrement_insane_delay(10)'><input type="button" value=" -- " onclick='decrement_insane_delay(100)'><input type="button" value=" --- " onclick='decrement_insane_delay(1000)'>
+<input type="button" value=" max " onclick='document.getElementById("insane_delay").value=3100'>
+</div>
+<div>Number of frames for insane rotate <input alt='Number of frames per 90 (1[90],2[45],3[30],5[18],6[15],9[10])' title='Number of frames per 90 (1[90],2[45],3[30],5[18],6[15],9[10])' type="text" id='step' value='1' >
+</div>
+<div>Steps for insane change <input type="text" id='steps_for_insane_change' value='1'></div>
+</div>
+<div id='up_div'  style='border:2px solid orange;'><div>Delay for up <input type="text" id='up_delay' value='120'><input type="button" value=" min " onclick='document.getElementById("up_delay").value=1'>
+<input type="button" value=" + " onclick='increment_up_delay(10)'><input type="button" value=" ++ " onclick='increment_up_delay(100)'><input type="button" value=" +++ " onclick='increment_up_delay(1000)'>
+<input type="button" value=" - " onclick='decrement_up_delay(10)'><input type="button" value=" -- " onclick='decrement_up_delay(100)'><input type="button" value=" --- " onclick='decrement_up_delay(1000)'>
+<input type="button" value=" max " onclick='document.getElementById("up_delay").value=3120'>
+</div><div> Step for up <input type="text" id='up_step' value='1'></div>
+<div>Reverse?<input type="checkbox" id="up_reverse_switch" ></div>
+
+</div>
+
+<div id='shift_both_div' style='border:2px solid lime;'>
+<div>Step for shift both <input type="number" id='shift_steps' value='1'></div>
+<div>Delay for shift both <input type="text" id='shift_both_delay' value='200'>
+<input type="button" value=" min " onclick='document.getElementById("shift_both_delay").value=10'>
+<input type="button" value=" max " onclick='document.getElementById("shift_both_delay").value=3500'>
+</div><div>Reverse?<input type="checkbox" id="shift_reverse_switch" ></div>
+<div>
+<input type="button" id="shift_both_btn" value="shift both"> 
+
+</div>
+</div>
+
+
+
+<div id='rotate_result_div'>
+<div>Delay for rotate_result <input type="text" id='rotate_result_delay' value='200'>
+<input type="button" value=" min " onclick='document.getElementById("rotate_result_delay").value=10'>
+<input type="button" value=" max " onclick='document.getElementById("rotate_result_delay").value=3500'>
+</div>
+<div>Degree for rotate_result <input type="text" id='rotate_result_degree' value='1'></div>
+<div>Step for rotate_result <input type="text" id='rotate_result_step' value='1'></div>
+<div>Reverse?<input type="checkbox" id="rotate_result_reverse" ></div>
+<div>From canvas <input type="text" id='from_rotate_result_canvas' value='myCanvas4'></div>
+<div>To canvas <input type="text" id='to_rotate_result_canvas' value='myCanvas4_1'></div>
+<input type="button" id="rotate_result" value="rotate_result"> 
+
+</div>
+
+
+<div id='random_inv_div'>Delay for random inv <input type="text" id='round_random_delay' value='2000'>
+<div>
+
+<input type="button" id="random_round_auto_start" value="random inv auto start">
+<input type="button" id="random_round_auto_stop" value="random inv auto stop">
+</div>
+</div>
+<div id='swap_colors_div'>Delay for swap colors <input type="text" id='swap_colors_delay' value='2'>
+<div><span>semaphor<input type="checkbox" id="swap_colors_semaphor" ></span>
+<input type="text" id='swap_colors_semaphor_value' title='Swap colors semaphor value' value='2'>
+</div>
+<div>
+<input type="button" id="swap_colors" value="swap colors"> 
+<input type="button" id="swap_colors_auto_start" value="swap colors auto start">
+<input type="button" id="swap_colors_auto_stop" value="swap colors auto stop">
+</div>
+</div>
+<div id='random_div'>
+<div><span>semaphor<input type="checkbox" id="random_colors_semaphor" ></span>
+<input type="text" id='random_colors_semaphor_value' title='Random colors semaphor value' value='2'>
+</div>
+<input type="button" id="random_colors" value="random colors">
+<input type="text" id='random_delay' title='Random delay' value='2'> filter?<input type="checkbox" id="filter" ><input type="checkbox" id="filter0" ><input type="checkbox" id="filter2" ><input type="checkbox" id="random3" ><input type="checkbox" id="filter5" > <input type="checkbox" id="filter7" > <input type="text" id='filter_rgb' value='255,255,255'>
+<input type="button" id="random_colors_auto_start" value="random colors auto start">
+<input type="button" id="random_colors_auto_stop" value="random colors auto stop">
+</div>
+
+  <div style='border:2px solid #ff00ff;padding: 4px'>
+
+ <input type="text" id='query_for_server' size='100%' value='generate random seed 8 32, mirror right, mirror down, axes minus,  plus, plus, plus'>
+  <input type="button" id='do_server_query' value='query2server'>
+ </div>
+<div id='destroyer_div'>
+<div>
+<input type="number" id='destroyer_semaphor_value' title='Destroyer semaphor value' value='40'>
+<input type="number" id='destroyer_semaphor_delay' title='Destroyer semaphor delay' value='40'>
+</div>
+
+Delay for destroyer <input type="text" id='destroyer_delay' value='700'>
+<div id='undestroyer_div'>Delay for undestroyer <input type="text" id='undestroyer_delay' value='500'>
+<div><span class='bord'>Reverse? <input type="checkbox" id='destroyer_reverse'  ></span></div>
+<div>Undestroy counter: <input type="number"  id='undestroy_counter' value='0' ></div>
+<div>line width of undestroy <input type="number" title='1-10' id='thikness_of_undestroy' min=0 max=10 value='5' ></div>
+<div>What kind of? (0-1): <input type="number" title='0-1' id='kind_of_undestroy' min=0 max=1 value='0' ></div>
+<div>
+<input type="button" id="undestroyer_add_new" value="add new">
+<input type="button" id="undestroyer_auto_start" value="undestroyer auto start">
+<input type="button" id="undestroyer_auto_stop" value="undestroyer auto stop">
+<input type="button" id="destroyer" value="destroyer"> 
+<input type="button" id="destroyer_auto_start" value="destroyer auto start">
+<input type="button" id="destroyer_auto_stop" value="destroyer auto stop">
+</div>
+</div>
+
+
+<div>
+FROM canvas <input type="text" id='from_canvas_for_warpdrive' value='myCanvas4'>
+   
+  <input type="button" id='do_warp_drive0' value='warp drive 0'> 
+ <input type="button" id='do_warp_drive' disabled  value='!  warp drive'> 
+  <input type="button" id='do_warp_drive2' disabled  value='!  warp drive 2'> 
+    <input type="button" id='do_warp_drive3' value='warp drive 3'> 
+	  <input type="button" id='do_warp_drive4' disabled value='!  warp drive 4'> 
+	   <input type="button" id='do_warp_drive5' value='warp drive 5'> 
+	   <input type="button" id='do_warp_drive6' value='warp drive 6(no brtx)'> 
+	  </div>
+	
+
+
+<div>
+<input type="button" id="rotate" value="rotate step"> <input type="button" hidden='hidden'  id="rotate_auto" value="rotate auto"> 
+<input type="text" id='rotate_counter1' title='Rotate counter 1' value='0'> <input type="text" id='rotate_counter2' title='Rotate counter 2' value='-0'>
+<input type="button" id="rotate_insane" value="insane rotate">
+<input type="button"  value='0' onclick='prepangle(0)'>
+<input type="button"  value='15' onclick='prepangle(15)'>
+<input type="button"  value='22.5' onclick='prepangle(22.5)'> 
+<input type="button"  value='30' onclick='prepangle(30)'> 
+<input type="button"  value='45' onclick='prepangle(45)'> 
+
+</div>
+<div>
+capitalizm?<input type="checkbox" id="up_nova_f" >
+<input type="button" id="up" value="up"><input type="button" id="up_nova" value="up nova"> <input type="text" id='up_counter' title='Up counter' value='0'>
+<input type="button" id="upastart" value="up auto start">
+<input type="button" id="upastop" value="up auto stop">
+</div><div>Step angle for magik rotate: <input type="number" id='magik_rotate_step_angle' value='15'>
+<input type="button" id="rotate_result_auto_start" value="rotate_result  auto start">
+<input type="button" id="rotate_result_auto_stop" value="rotate_result auto stop">
+<input type="button" id="shift_both_auto_start" value="shift both auto start">
+<input type="button" id="shift_both_auto_stop" value="shift both auto stop">
+<input type="button" id="shift_both_btn" value="shift both" onclick='shift_both_wrapper()'> 
+<input type="button" id="shift_both_btn" value="shift both reverse" onclick='shift_both_reverse_wrapper()'>
+</div>
+<div>
+<input type="button" id="random_round_colors" value="random inv">
+<input type="button" id="pereplet" value="pereplet"><input type="button" id="pereplet2" value="pereplet2">
+<input type="button" id="paint_over" value="rem points">
+Show kat? <input type="checkbox" id="show_kat" > <span class='bord'>Remove water? <input type="checkbox" id="show_kat_remove_water"></span>
+Make cyclon? <input type="checkbox" id="mk_cyclon" >
+<input type="checkbox" onclick="rgbpm_inv_mask()" >
+<input type="text" id="makergbplusminus_filter" value='50,50,50,1'>
+<input type="checkbox" id="rgbpm_var2" > 
+
+<input type="button" id="makergbpm" value="make +-rgb">
+
+</div> 
+<div>
+<input type="button" id="add" value="save"> 
+<input type="button" id="analyze" value="analyze step by step"> 
+<input type="button" id="combine" value="combine"> 
+<input type="button" id="rio" value="rio"><input type="button" id="makerazn" value="make razn"> 
+<input type="button" id="seed_to_canvas_btn" value="seed to canvas" onclick='seed_to_canvas()'>
+<input type="button" value="nanonites" onclick="nanonites()">
+<div style='border:2px solid #ff00ff;padding: 4px'>
+<input type="text" id='pixel_w_size' value='1'>
+<input type="text" id='pixel_h_size' value='1'>
+<input type="button" id="shift" value="shift HOR left" onclick="shift_wrapper()">
+<input type="text" id='shift_hor_counter' value='0'>
+<input type="button" id="shift" value="shift HOR left REVERSE" onclick="shift_reverse_wrapper()">
+<input type='button' id='shift2' value='shift VERT down' onclick='shift2_wrapper()'>
+<input type="text" id='shift_vert_counter' value='0'>
+<input type='button' id='shift2' value='shift VERT down REVERSE' onclick='shift_reverse2_wrapper()'>
+</div>
+
+<div id='rgbpp_div'>
+<div>Delay for rgb++ <input type="text" id='rgbpp_delay' value='1000'></div> 
+<div>Step for rgb++ <input type="text" id='rgbpp_step' value='1'></div>
+<div>
+<input type="button" id="rgbpp" value="rgb++">
+<input type="button" id="rgbpp_auto_start" value="rgbpp auto start">
+<input type="button" id="rgbpp_auto_stop" value="rgbpp auto stop"><input type="text" id='rgbpp_steps' value='50,50,50,5'>
+
+</div>
+</div>
+
+
+<div hidden ><canvas id="canvas0" width='50' height='50' ></canvas>
+<canvas id="swap_colors_thread_canvas"  width='50' height='50' ></canvas>
+<canvas id="rnd_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="inv_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="cut_angle_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="insane_rotate_canvas"  width='50' height='50' ></canvas>
+<canvas id="shift_both_canvas"  width='50' height='50' ></canvas>
+<canvas id="shift2_both_canvas"  width='50' height='50' ></canvas>
+<canvas id="inv_shift_both_canvas"  width='50' height='50' ></canvas>
+<canvas id="magik_rotate_canvas"  width='50' height='50' ></canvas>
+<canvas id="up_thread_canvas"  width='50' height='50' ></canvas>
+<canvas id="up2_thread_canvas"  width='50' height='50' ></canvas>
+<canvas id="plusos_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="half_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="minusos_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="filter7_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="nanitos_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="nonitos_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="ippbp_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="vortex_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="rotate_result_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="median_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="rmedian_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="runa_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="spiral_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="trilist_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="mod_penta_pentalist_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="mod_sector_sector_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="mod_sevenctor_sevenctor_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="nvenctor_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="fivelist_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="sixlist_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="show_kat_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="sector_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="penta_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="circle_median_canvas"  width='50' height='50' ></canvas>
+<canvas id="filter_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="destroyer_thread_canvas"  width='50' height='50' ></canvas>
+<canvas id="make_gif_imgData_canvas"  width='50' height='50' ></canvas>
+<canvas id="myCanvas4"  width='50' height='50' >Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="myCanvas4_1" width='50' height='50'  >Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="myCanvas7"  width='50' height='50' >Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="myCanvas79"  width='50' height='50' >Your browser does not support the HTML5 canvas tag.</canvas>
+</div>
+
+<!----
+<h1>My obvod for pasted images</h1>
+
+<p>Paste image, then choose the color for obvod and click image</p>
+<div style="float:left"><textarea id="color">rgba(255,0,0,1)</textarea></div>
+---->
+<div> 
+
+
+
+<input type="text" id="make_red_step" value='10'>
+<input type="button" id="makered2" value="lt red">
+<input type="text" id="make_green_step" value='10'>
+<input type="button" id="makegreen2" value="lt green">
+<input type="text" id="make_blue_step" value='10'>
+<input type="button" id="makeblue2" value="lt blue">
+<!---
+<input type="button" id="save_image_on_server" value="save image on server" onclick='save_image_on_server()'>
+---->
+</div>
+<div id='div_rotate_nova'>
+<span>STEP: </span><input type="text" id="rotate_nova_step" value='1'>
+<span>ANGLE: </span><input type="text" id="rotate_nova_angle" value='1'><input type="button" value="rotate nova" onclick="rotate_nova()">
+<span>DELAY: </span><input type="text" id="rotate_nova_auto_delay" value='10'>
+Reverse? <input type="checkbox" id="reverse_nova_f" >
+<input type="button" value="rotate nova auto start" onclick="rotate_nova_auto_start()">
+<input type="button" value="rotate nova auto stop" onclick="rotate_nova_auto_stop()">
+Effect? <input type="checkbox" id="ninonani" ><input type="button" value="ninonani" onclick="ninonani()">
+
+</div>
+<div id='main_thread_div'>
+<div><input type="number" id='main_thread_delay' title='main thread delay' value='1'></div>
+<div><input type="button" value=" min " onclick='document.getElementById("main_thread_delay").value=1'>
+<input type="button" value=" + " onclick='incr("main_thread_delay",10)'>
+<input type="button" value=" ++ " onclick='incr("main_thread_delay",100)'>
+<input type="button" value=" +++ " onclick='incr("main_thread_delay",1000)'>
+<input type="button" value=" - " onclick='incr("main_thread_delay",-10)'>
+<input type="button" value=" -- " onclick='incr("main_thread_delay",-100)'>
+<input type="button" value=" --- " onclick='incr("main_thread_delay",-1000)'>
+<input type="button" value=" max " onclick='document.getElementById("main_thread_delay").value=3100'></div>
+<div><input type="button" id="main_thread" value="main thread">
+<input type="button" id="main_thread_auto_start" value="main thread auto start">
+<input type="button" id="main_thread_auto_stop" value="main thread auto stop"></div>
+</div>
+<div>
+<input type="button" id="round_colors" value="round">
+<input type="text" id='round_delay' title='Round delay' value='50'>
+<input type="button" id="round_auto_start" value="round auto start">
+<input type="button" id="round_auto_stop" value="round auto stop">
+</div><div id='filter_colors_div'>
+
+<div>filter  <input type="text" id='filter_colors_str_rgb' value='200'></div>
+<div>filter colors delay<input type="text" id='filter_colors_delay' title='filter colors delay' value='500'></div>
+
+<span class='bord'>Nanitos? <input type="checkbox" id='nanitos_when_ir'  ></span>
+<span class='bord'>Nonitos? <input type="checkbox" id='nonitos_when_ir'  ></span>
+<span class='bord'>Plusos? <input type="checkbox" id='plusos_when_ir'  ></span>
+<span class='bord'>Minusos? <input type="checkbox" id='minusos_when_ir'  ></span>
+<span class='bord'>vortex? <input type="checkbox" id="_vortex" ></span>
+<span class='bord'>Filtering when insane rotate? <input type="checkbox" id='filtering_when_ir'  ></span>
+
+<div>FROM canvas for filter colors <input type="text" id='from_canvas_for_filter_colors' value='myCanvas4'></div>
+<div>TO canvas for filter colors <input type="text" id='to_canvas_for_filter_colors' value='myCanvas4'></div>
+<input type="button" id="filter_colors" value="filter colors"><input type="button" id="filter_colors_auto_start" value="filter colors auto start">
+<input type="button" id="filter_colors_auto_stop" value="filter colors auto stop">
+</div>
+<!----
+<div>
+<input type="button" id="min_red_range" value=" - ">
+<input type="range" id="range_red" min="0" max="255" step="1" value="0" onchange="user_change_r_color()">
+<input type="text" id="red" value="0" readonly>
+<input type="button" id="max_red_range" value=" + ">
+</div>
+<div>
+<input type="button" id="min_green_range" value=" - ">
+<input type="range" id="range_green" min="0" max="255" step="1" value="0" onchange="user_change_g_color()">
+<input type="text" id="green" value="0" readonly>
+<input type="button" id="max_green_range" value=" + ">
+</div>
+<div>
+<input type="button" id="min_blue_range" value=" - ">
+<input type="range" id="range_blue" min="0" max="255" step="1" value="0" onchange="user_change_b_color()">	
+<input type="text" id="blue" value="0" readonly>
+<input type="button" id="max_blue_range" value=" + ">
+</div>
+<div>
+<input type="button" id="min_alpha_range" value=" - ">
+<input type="range" id="range_alpha" min="0" max="255" step="1" value="0" onchange="user_change_a_color()">	
+<input type="text" id="alpha" value="0" readonly>
+<input type="button" id="max_alpha_range" value=" + ">
+</div>
+----->
+<style>
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    color: transparent;
+	text-shadow: 0px 0px 0px rgba(0,0,255,0.5);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+	cursor:pointer;
+}
+</style>
+
+
+<div id="analyze_results"></div>
+<canvas id="myCanvas"  style='display:none'  >
+Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="myCanvas1" style='display:none' >
+Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="myCanvas2" hidden>
+Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="myCanvas3" hidden  >
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+<canvas id="myCanvas5" hidden   >
+Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="myCanvas6"  hidden  >
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<!---
+<script>
+var counter=0;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");ctx.translate(75,38);
+setInterval(function(){
+ctx.rotate(0 * Math.PI / 180);
+ctx.fillStyle='white';
+ctx.fillRect(0,0,c.width,c.height);
+ctx.rotate(((-counter-1)%360) * Math.PI / 180);
+ctx.rotate(((counter++)%360) * Math.PI / 180);
+ctx.fillStyle='red';
+ctx.fillRect(50, 20, 100, 50);
+},300);
+
+</script>
+--->
+<!---
+<div><input type="checkbox" id="cyclic" checked>Cyclic</div>
+--->
+<!--
+<div><input type="button" id="update_colors_btn" value="Update colors" onclick="update_colors()"></div>
+----><input type="button" id="mod_nova_rotate2_clip_btn" value="mod_nova_rotate2_clip1_btn" onclick='mod_nova_rotate2_clip_wrapper(1)'>
+<input type="button" id="mod_nova_rotate2_clip_btn" value="mod_nova_rotate2_clip2_btn" onclick='mod_nova_rotate2_clip_wrapper(2)'>
+<canvas id="canvas_for_filtering" width='50' height='50' ></canvas>
+
+
+
+
+<input type="button" id="magik_rotate_step" value="magik_rotate_step">
+magik rotate on? <input type="checkbox" id="magik_rotate_on" >
+cut magik rotate? <input type="checkbox" id="magik_rotate_cut" >
+% from left top<input type="text" id='magik_rotate_procent' title='magik_rotate_procent from lt corner' value='25'>
+cutted magik rotate vortex? <input type="checkbox" id="magik_rotate_cutted_vortex" >
+<div><input type="checkbox" id="rotate_only_one_side" ></div>
+<div><input type="checkbox" id="no_any_canvas" ></div>
+
+
+
+<div style="height:64px">
+    <img src="https://js.cx/browsers/chrome.svg" class="draggable browser-items">
+    <img src="https://js.cx/browsers/firefox.svg" class="draggable browser-items">
+    <img src="https://js.cx/browsers/ie.svg" class="draggable browser-items">
+    <img src="https://js.cx/browsers/opera.svg" class="draggable browser-items">
+    <img src="https://js.cx/browsers/safari.svg" class="draggable browser-items">
+  </div>
+
+  <p>Браузер переносить сюда:</p>
+
+  <div class="computer droppable">
+  </div>
+
+</body>
+
+
+
+
+
+
+<div id='gif_frames'></div>
+
+
+
+
+
+
+
+</body>
+</html>
+
